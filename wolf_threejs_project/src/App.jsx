@@ -1,16 +1,14 @@
-import { useState } from 'react'
-
-import './App.css'
-import Dog from './components/Dog'
-
+import "./App.css";
+import Dog from "./components/Dog";
+import { Canvas } from "@react-three/fiber";
 function App() {
-  
   return (
     <>
-      <Dog />
-      
+      <Canvas>
+        <Dog />
+      </Canvas>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
