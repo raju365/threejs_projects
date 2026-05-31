@@ -11,3 +11,12 @@ body,
   background-color: black;
   color: white;
 }
+section{
+  min-height: 100vh;
+  border: 2px solid white;
+  position: relative;
+  z-index: 2;
+}
+main{
+  position: relative;
+}

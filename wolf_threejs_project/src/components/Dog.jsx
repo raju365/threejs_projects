@@ -2,8 +2,11 @@ import * as THREE from "three";
 import { useThree } from "@react-three/fiber";
 import { useGLTF, useTexture, useAnimations } from "@react-three/drei";
 import { useEffect } from "react";
-
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 const Dog = () => {
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
   const model = useGLTF("/models/dog.drc.glb");
 
   useThree(({ camera, scene, gl }) => {
@@ -17,18 +20,18 @@ const Dog = () => {
     actions["Take 001"].play();
   }, [actions]);
 
-  const [normalMap, sampleMatCap] = (useTexture([
+  const [normalMap, sampleMatCap] = useTexture([
     "/dog_normals.jpg",
     "/matcap/mat-2.png",
-  ])).map(texture => {
+  ]).map((texture) => {
     texture.flipY = false;
     texture.colorSpace = THREE.SRGBColorSpace;
     return texture;
   });
-  const [branchMap, branchNormalMap] = (useTexture([
+  const [branchMap, branchNormalMap] = useTexture([
     "/branches_diffuse.jpeg",
     "/branches_normals.jpeg",
-  ])).map(texture => {
+  ]).map((texture) => {
     texture.colorSpace = THREE.SRGBColorSpace;
     return texture;
   });
@@ -49,6 +52,18 @@ const Dog = () => {
     }
   });
 
+  useGSAP(() => {
+    console.log("GSAP WORKING");
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#section1",
+        endTrigger: "#section3",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+      },
+    });
+  }, []);
   return (
     <>
       <primitive
