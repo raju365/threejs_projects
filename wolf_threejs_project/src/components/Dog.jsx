@@ -1,10 +1,11 @@
 import * as THREE from "three";
 import { useThree } from "@react-three/fiber";
 import { useGLTF, useTexture, useAnimations } from "@react-three/drei";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 const Dog = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
   const model = useGLTF("/models/dog.drc.glb");
@@ -51,9 +52,11 @@ const Dog = () => {
       child.material = branchMaterial;
     }
   });
-// using gsap here to create a scroll-triggered animation for the dog model
+
+  const dogModel = useRef(model);
+
+  // using gsap here to create a scroll-triggered animation for the dog model
   useGSAP(() => {
-    console.log("GSAP WORKING");
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#section1",
@@ -61,8 +64,16 @@ const Dog = () => {
         start: "top top",
         end: "bottom bottom",
         scrub: true,
+        markers: true,
       },
     });
+    tl.to(dogModel.current.scene.position,{
+      z: -0.5,
+      y: 0.1,
+    })
+    .to(dogModel.current.scene.rotation,{
+      y: -Math.PI / 2,
+    })
   }, []);
   return (
     <>
