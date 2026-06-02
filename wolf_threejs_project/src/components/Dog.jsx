@@ -51,7 +51,7 @@ const Dog = () => {
       child.material = branchMaterial;
     }
   });
-
+// using gsap here to create a scroll-triggered animation for the dog model
   useGSAP(() => {
     console.log("GSAP WORKING");
     const tl = gsap.timeline({
