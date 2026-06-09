@@ -47,10 +47,18 @@ function App() {
               </svg>
             </div>
             <div className="nav-elem">
-              Our Showreel
+              <i className="ri-arrow-right-s-line"></i> Our Showreel
             </div>
-            <div className="nav-elem"></div>
+            <div className="nav-elem">
+              <i className="ri-menu-3-line"></i>
+            </div>
           </nav>
+          <div className="middle">
+            <div className="left">
+
+            </div>
+            <div className="right"></div>
+          </div>
         </section>
         <section id="section2">show case</section>
         <section id="section3"></section>
