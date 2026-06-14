@@ -55,14 +55,29 @@ function App() {
           </nav>
           <div className="middle">
             <div className="left">
-              <h1>WE <br/> MAKE <br/> GOOD <br /> SHIT</h1>
+              <h1>
+                WE <br /> MAKE <br /> GOOD <br /> SHIT
+              </h1>
             </div>
             <div className="right"></div>
           </div>
           <div className="bottom">
             <div className="left"></div>
-            <div className="right"></div>
+            <div className="right">
+              <p>
+                Dogstudio is a multidisciplinary <br />
+                creative studio at the intersection <br />
+                of art, design and technology.
+              </p>
+              <p>
+                Our goal is to deliver amazing experiences that make people
+                talk, and build strategic value for brands, tech, entertainment,
+                arts & culture.
+              </p>
+            </div>
           </div>
+          <div className="first-line"></div>
+          <div className="second-line"></div>
         </section>
         <section id="section2">show case</section>
         <section id="section3"></section>

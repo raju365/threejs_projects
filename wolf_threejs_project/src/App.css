@@ -33,6 +33,7 @@ main {
   position: relative;
 }
 #section1 {
+  --gap: 3rem;
   nav {
     display: flex;
     justify-content: space-between;
@@ -57,7 +58,7 @@ main {
   }
   .middle{
     display:flex;
-
+    gap:var(--gap);
     .left,.right{
       width:50%;
     }
@@ -75,6 +76,33 @@ main {
       }
   }
   .bottom{
-    
+    display:flex;
+    gap:var(--gap);
+    padding:2rem;
+    .left, .right{
+      width:50%;
+    }
+    .right{
+      p{
+        font-weight: 300;
+        line-height: 1.5;
+      }
+    }
+  }
+  .first-line{
+    width:35rem;
+    background-color: rgba(255,0,0,0.369);
+    height:1px;
+    position:absolute;
+    transform: rotate(45deg) translate(0, -17rem);
+  }
+  .second-line{
+    width:10rem;
+    background-color: rgba(255,0,0,0.369);
+    height:1px;
+    position:absolute;
+    transform: rotate(135deg);
+    top:25%;
+    right:12%
   }
 }
