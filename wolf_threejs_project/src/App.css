@@ -106,3 +106,35 @@ main {
     right:12%
   }
 }
+#section2{
+  .titles{
+    display:flex;
+    flex-direction:column;
+    padding-left:17rem;
+    padding-block:10rem;
+    
+    .title{
+      display:flex;
+      gap:4rem;
+      opacity:0.3;
+      align-items:center;
+      padding-block:1rem;
+      transition: all 0.3s linear;
+      cursor:pointer;
+
+      h1{
+        font-size: 4rem;
+        font-weight: 100;
+        line-height: 1;
+      }
+      small{
+        margin-top: 0.6rem;
+        font-size:0.5rem;
+      }
+    }
+    .title:hover{
+      opacity:1;
+     
+    }
+  }
+}
