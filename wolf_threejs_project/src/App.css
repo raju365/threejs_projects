@@ -23,14 +23,28 @@ body,
     "Helvetica Neue",
     sans-serif;
 }
+main {
+  position: relative;
+}
 section {
   min-height: 100vh;
   border: 2px solid white;
   position: relative;
   z-index: 2;
 }
-main {
-  position: relative;
+#canvas-elem::after{
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url(/background-l.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.3s linear;
 }
 #section1 {
   --gap: 3rem;
@@ -137,4 +151,53 @@ main {
      
     }
   }
+}
+main:has(#section2 .title:hover) #canvas-elem::after{
+  opacity:0.1;
+
+}
+.images{
+  position:fixed;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
+  img{
+    height:100%;
+    width:100%;
+    object-fit:cover;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:0;
+    transition: all 0.3s linear;
+  }
+}
+main:has(#section2 .title[img-title="tomorrowland"]:hover) .images img#tomorrowland{
+  opacity:1;
+  background-color: rgb(4,7,24);
+}
+main:has(#section2 .title[img-title="navy-pier"]:hover) .images img#navy-pier{
+  opacity:1;
+  background-color: rgb(4,7,24);
+}
+main:has(#section2 .title[img-title="chicago"]:hover) .images img#chicago{
+  opacity:1;
+  background-color: rgb(4,7,24);
+}
+main:has(#section2 .title[img-title="phone"]:hover) .images img#phone{
+  opacity:1;
+  background-color: rgb(4,7,24);
+}
+main:has(#section2 .title[img-title="kikk"]:hover) .images img#kikk{
+  opacity:1;
+  background-color: rgba(1, 15, 92, 0.74);
+}
+main:has(#section2 .title[img-title="kennedy"]:hover) .images img#kennedy{
+  opacity:1;
+  background-color: rgb(4,7,24);
+}
+main:has(#section2 .title[img-title="opera"]:hover) .images img#opera{
+  opacity:1;
+  background-color: rgb(4,7,24);
 }
