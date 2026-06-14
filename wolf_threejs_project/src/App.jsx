@@ -55,8 +55,12 @@ function App() {
           </nav>
           <div className="middle">
             <div className="left">
-
+              <h1>WE <br/> MAKE <br/> GOOD <br /> SHIT</h1>
             </div>
+            <div className="right"></div>
+          </div>
+          <div className="bottom">
+            <div className="left"></div>
             <div className="right"></div>
           </div>
         </section>
