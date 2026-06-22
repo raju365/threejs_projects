@@ -201,3 +201,40 @@ main:has(#section2 .title[img-title="opera"]:hover) .images img#opera{
   opacity:1;
   background-color: rgb(4,7,24);
 }
+
+#section3{
+  padding-block: 10rem;
+  padding-inline: 10rem;
+
+  .top,.bottom{
+    display: flex;
+    width: 100%;
+    gap:10rem;
+
+  }
+  .left,.right{
+    width: 50%;
+  }
+  .top .left{
+    padding-right: 5rem;
+    position: relative;
+    isolation: isolate;
+    h3{
+      font-size: 3rem;
+      font-weight: 100;
+      opacity: 0.6;
+      position: relative;
+      z-index: 1;
+    }
+  }
+  
+  .bottom .right{
+    display: flex;
+    p{
+      opacity: 0.5;
+      font-weight: 200;
+      font-size: 0.6rem;
+
+    }
+  }
+}
