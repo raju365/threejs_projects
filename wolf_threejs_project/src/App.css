@@ -242,6 +242,8 @@ main:has(#section2 .title[img-title="opera"]:hover) .images img#opera{
   }
 }
 #section4{
+  padding-inline: 10rem;
+  min-height: 50vh;
    .top,.bottom{
     display: flex;
     width: 100%;
