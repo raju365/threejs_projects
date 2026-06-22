@@ -127,6 +127,9 @@ function App() {
             </div>
             <div className="right"></div>
           </div>
+          
+        </section>
+        <section id="section4">
           <div className="bottom">
             <div className="left"></div>
             <div className="right">

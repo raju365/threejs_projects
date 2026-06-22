@@ -11,7 +11,10 @@ const Dog = () => {
   const model = useGLTF("/models/dog.drc.glb");
 
   useThree(({ camera, scene, gl }) => {
-    camera.position.z = 0.6;
+    
+    camera.position.y = 0.1;
+    camera.position.z = 0.5;
+
     gl.toneMapping = THREE.ReinhardToneMapping;
     gl.outputColorSpace = THREE.SRGBColorSpace;
   });
@@ -144,7 +147,7 @@ const Dog = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#section1",
-        endTrigger: "#section3",
+        endTrigger: "#section4",
         start: "top top",
         end: "bottom bottom",
         scrub: true,
